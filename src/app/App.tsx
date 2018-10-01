@@ -5,10 +5,11 @@ import store from './redux/store';
 import { SFCCounterConnectedVerbose } from './components/sfc-counter';
 
 declare let module: any
+const list: string[] = ["ipfs", "storage"];
 
 ReactDOM.render(
     <Provider store={store}>
-      <SFCCounterConnectedVerbose label={'SFCCounterConnectedVerbose'} />
+      <SFCCounterConnectedVerbose label={'SFCCounterConnectedVerbose'} permissions={list}/>
     </Provider>,
     document.getElementById('root'));
 

@@ -6,6 +6,14 @@ import { ADD, INCREMENT } from './constants';
 export const increment = () => action(INCREMENT);
 export const add = (amount: number) => action(ADD, amount);
 
+
+// export const closeManager = () => action(CLOSE_MANAGER);
+
+// export const togglePermission = (PermissionType: Permission) => action(TOGGLE_PERMISSION, {
+//     item: PermissionType
+//   });
+ 
+
 // ALTERNATIVE API - allow to use reference to "action-creator" function instead of "type constant"
 // e.g. case getType(increment): return { ... }
 // This will allow to completely eliminate need for "constants" in your application, more info here:

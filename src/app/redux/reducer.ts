@@ -4,11 +4,9 @@ import { ActionType } from 'typesafe-actions';
 import * as counters from './actions';
 import { ADD, INCREMENT } from './constants';
 
-export type CountersAction = ActionType<typeof counters>;
+import { CountersState } from './state';
 
-export type CountersState = {
-  readonly reduxCounter: number;
-};
+export type CountersAction = ActionType<typeof counters>;
 
 export default combineReducers<CountersState, CountersAction>({
   reduxCounter: (state = 0, action) => {

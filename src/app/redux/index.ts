@@ -1,6 +1,7 @@
 import * as countersConstants from './constants';
 import * as countersActions from './actions';
-import countersReducer, { CountersState, CountersAction } from './reducer';
+import countersReducer, { CountersAction } from './reducer';
+import { CountersState } from './state';
 import * as countersSelectors from './selectors';
 
 export {
