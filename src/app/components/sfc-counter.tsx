@@ -1,7 +1,23 @@
 import * as React from 'react';
 import { bindActionCreators, Dispatch } from 'redux';
+
+
+import { StateType } from 'typesafe-actions';
+// import { RouterAction, LocationChangeAction } from 'react-router-redux';
+// type ReactRouterAction = RouterAction | LocationChangeAction;
+import { CountersAction } from '../redux/reducer';
+import rootReducer from '../redux/store/root-reducer';
+ 
+  export type RootState = StateType<typeof rootReducer>;
+  export type RootAction = CountersAction;
+ 
+
+
+
 import { connect } from 'react-redux';
-import { countersActions } from '../features/counters';
+
+
+import * as countersActions from '../redux/actions';
  
 export interface SFCCounterProps {
   label: string;
@@ -24,11 +40,11 @@ export const SFCCounter: React.SFC<SFCCounterProps> = (props) => {
   );
 };
 
-const mapStateToProps = (state: Types.RootState) => ({
+const mapStateToProps = (state: RootState) => ({
   count: state.counters.reduxCounter,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<Types.RootAction>) => bindActionCreators({
+const mapDispatchToProps = (dispatch: Dispatch<RootAction>) => bindActionCreators({
   onIncrement: countersActions.increment,
 }, dispatch);
 

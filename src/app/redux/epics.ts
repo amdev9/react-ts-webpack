@@ -1,3 +1,4 @@
+/*
 import Types from 'Types';
 import { combineEpics, Epic } from 'redux-observable';
 import { tap, ignoreElements, filter } from 'rxjs/operators';
@@ -23,3 +24,4 @@ const logAddAction: Epic<TodosAction, Types.RootState, Types.Services> = (
 
 export default combineEpics(logAddAction);
 
+*/
