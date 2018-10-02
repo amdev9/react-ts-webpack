@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 
 import * as countersActions from '../redux/actions';
  
-import { SFCCounterItem } from './sfc-counter-item';
+import { PermissionBox } from './PermissionBox';
 
 export interface SFCCounterProps {
   permissions: string[];
@@ -26,7 +26,7 @@ export const SFCCounter: React.SFC<SFCCounterProps> = (props) => {
 
   const permissionItems: JSX.Element[] = permissions.map(
     (value: string): JSX.Element => (
-      <SFCCounterItem 
+      <PermissionBox 
         key={`${value}`} 
         item={value} 
         onTogglePerm={onIncrement}
@@ -55,7 +55,7 @@ const mapDispatchToProps = (dispatch: Dispatch<RootAction>) => bindActionCreator
   onIncrement: countersActions.increment,
 }, dispatch);
 
-export const SFCCounterConnectedVerbose =
+export const PermissionLayoutConnected =
   connect(mapStateToProps, mapDispatchToProps)(SFCCounter);
 
 

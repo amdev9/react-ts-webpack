@@ -1,14 +1,14 @@
 import * as React from "react";
 // import  { Permission } from '../redux/reducers/state';
 
-interface SFCCounterItemProps {
+interface PermissionBoxProps {
   item: string,
   onTogglePerm?: () => any
 }
  
 //@todo read data & assets from AppsManager for icons preview
-export class SFCCounterItem extends React.Component< SFCCounterItemProps, { checked?: boolean }> { 
-  constructor(props: SFCCounterItemProps) {
+export class PermissionBox extends React.Component< PermissionBoxProps, { checked?: boolean }> { 
+  constructor(props: PermissionBoxProps) {
     super(props);
     this.state = {
       checked: false
